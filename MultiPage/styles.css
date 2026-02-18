@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head> 
-    <title> My Favorite GAMES </title>
-</head>
-<style>
-        body {
+   body {
             background-color: #a5cff8;
             font-family: Arial, sans-serif;
         }
@@ -14,6 +8,7 @@
             text-align: center;
         }
 
+      
         ul{
              color: #5858ce;  
             padding-bottom: 5px;
@@ -36,12 +31,17 @@
         
         p {
             color: #5858ce;
-            border-bottom: 2px solid #000000;
             padding-bottom: 5px;
             text-align: center;
 
         }
-  
+
+        
+        footer {
+color: #000000;
+            padding-top: 100px;
+            text-align: center;
+}
         .highlight {
             background-color: #FFEAA7;
             padding: 10px;
@@ -92,70 +92,15 @@
         img {
             border: 5px solid #000000;
             border-radius: 10px;
-            margin: 10px;
+            margin-left: 22%;
             width: 300px;
             height: 300px;
             
         }
-    </style>
-</style>
-<body>
-<h1> Top three Games </h1>
-<p > The games on this list are ones I play endlessly all the time, whether its alone or with my friends</p>
 
-<h2> Top 3 </h2>
-<ol>
-    <li>Ark Survival Ascended</li>
-    <li>Need For Speed</li>
-    <li>Minecraft</li>
-</ol>
-
-<h2> Why I love these Games</h2>
-<ul>
-    <li > You can add mods to do new things </li>
-    <li> Me and my friends can play together whenever we want </li>
-    <li> Fun mechanics</li>
-    <li> All three have my interests in the game </li>
-</ul>
-
-<h2> Color Scheme And Why </h2>
-<p>   I chose a monochromatic color scheme using blue. I din't really have a specific mood to convey, I just chose it because the color looks good in a monochromatic style.</p>
-
-
-<table> 
-    <tr>
-        <th>Name</th>
-        <th>Year</th>
-        <th>Rating</th>
-        <th>Creator</th>
-    </tr>   
-    <tr>
-        <th>Ark Survival Ascended</th>
-        <th>2023</th>
-        <th>8/10</th>
-        <th>Studio Wildcard</th>
-    </tr> 
-    <tr>
-        <th>Need for Speed Unbound</th>
-        <th>2022</th>
-        <th>9.3/10</th>
-        <th>EA</th>
-    <tr>;
-        <th>Minecraft</th>
-        <th>2009</th>
-        <th>10/10</th>
-        <th>Mojang</th>
-    </tr> 
-</table>
-<hr>
-<table>
-    <tr>
-       <th><img src="images/ark.jpg"></th>
-        <th><img src="images/nfs.jpg"></th>
-        <th><img src="images/mc.jpg"></th>
-    </tr>
-</table>
-
-</body>
-
-</html>
+        a {
+          font-size: large;
+             color: #1d68bd;
+            text-align: center;
+            MARGIN-LEFT: 47%;
+        }

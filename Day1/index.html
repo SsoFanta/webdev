@@ -3,59 +3,862 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>SE1400 Assignmnet Files</title>
+    <title>Cookie Empire - Ultimate Idle Game</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
-        header { background: #026c99; color: white; padding: 10px 0; text-align: center; }
-        section { max-width: 800px; margin: 20px auto; padding: 20px; background: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
-        h1, h2 { color: #333; }
-        ul { list-style: none; padding: 0; }
-        ul li { margin: 5px 0; }
-        ul li a { color: #026c99; text-decoration: none; font-weight: bold; }
-        ul li a:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 10px; margin-top: 20px; background: #333; color: white; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .main-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        .sidebar {
+            width: 350px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .currency-display {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cookie-counter {
+            font-size: 48px;
+            font-weight: bold;
+            color: #764ba2;
+            margin: 10px 0;
+        }
+
+        .per-second {
+            font-size: 18px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .click-button {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            font-size: 64px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            box-shadow: 0 15px 35px rgba(245, 87, 108, 0.4);
+            transition: all 0.1s;
+            font-weight: bold;
+            color: white;
+            margin: 20px 0;
+        }
+
+        .click-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .click-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 45px rgba(245, 87, 108, 0.6);
+        }
+
+        .click-effect {
+            position: fixed;
+            pointer-events: none;
+            font-size: 32px;
+            font-weight: bold;
+            color: #f5576c;
+            opacity: 1;
+            animation: floatUp 1.5s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #764ba2;
+            margin: 15px 0 10px 0;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+        }
+
+        .building-item, .upgrade-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            margin-bottom: 8px;
+        }
+
+        .building-item:hover, .upgrade-item:hover {
+            transform: translateX(5px);
+            border-color: #f5576c;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .building-item.affordable, .upgrade-item.affordable {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .building-item.not-affordable, .upgrade-item.not-affordable {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .building-item.not-affordable:hover, .upgrade-item.not-affordable:hover {
+            transform: none;
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        .item-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .item-info {
+            font-size: 12px;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+
+        .item-cost {
+            font-size: 12px;
+            margin-top: 4px;
+            font-weight: bold;
+        }
+
+        .world-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .world-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .world-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .world-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .prestige-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ffa751 0%, #ffe259 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .prestige-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 165, 81, 0.4);
+        }
+
+        .prestige-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .stats-section {
+            background: #f0f0f0;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .stat-line {
+            display: flex;
+            justify-content: space-between;
+            margin: 4px 0;
+        }
+
+        .achievement-popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .achievement-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .achievement-desc {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .minigame-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .minigame-btn {
+            width: 100%;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid white;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            margin-top: 8px;
+        }
+
+        .minigame-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            animation: modalPop 0.3s ease-out;
+        }
+
+        @keyframes modalPop {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+
+        .modal-text {
+            font-size: 16px;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .modal-btn.confirm {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .modal-btn.cancel {
+            background: #ddd;
+            color: #333;
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .scrollable {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .level-indicator {
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>SE-1400 Course Homepage</h1>
-        <p>This is where I will post links to my assignments and other important information.</p>
-    </header>
-    <section>
-        <h2>About Me</h2>
-        <p>Hello! My name is [Noah Fant], and I’m excited to share this simple website with you. I enjoy learning about web development and creating user-friendly designs. In my free time, I love exploring new hobbies, reading, and spending time outdoors.</p>
-        <p>This website is a small step toward showcasing my skills and experiments with coding. Stay tuned for more updates and improvements!</p>
-    </section>
-    <section>
-        <h2>Course Assignments</h2>
-        <ul>
-          <li><a href="utahtech2/index.html">Utah Tech 2</a></li>
-          <li><a href="utahtech3/index.html">Utah Tech 3</a></li>
-          <li><a href="utahtech4/index.html">Utah Tech 4</a></li>
-          <li><a href="utahtech5/index.html">Utah Tech 5</a></li>
-          <li><a href="utahtech6/index.html">Utah Tech 6</a></li>
-          <li><a href="utahtech7/index.html">Utah Tech 7</a></li>
-          <li><a href="utahtech8/index.html">Utah Tech 8</a></li>
-          <li><a href="utahtech9/index.html">Utah Tech 9</a></li>
-          <li><a href="utahtech10/index.html">Utah Tech 10</a></li>
-      </ul>
-      <h2>Final Project Milestones</h2>
-      <ul>
-          <li><a href="milestone1/index.html">Milestone 1</a></li>
-          <li><a href="https://www.figma.com/design/">Milestone 2</a></li>
-          <li><a href="milestone3/index.html">Milestone 3</a></li>
-          <li><a href="milestone4/index.html">Milestone 4</a></li>
-          <li><a href="milestone5/index.html">Milestone 5</a></li>
-          <li><a href="milestone6/index.html">Milestone 6</a></li>
-          <li><a href="milestone7/index.html">Milestone 7</a></li>
-        </ul>
-    </section>
-    <footer>
-        <p>&copy; <span id="currentYear"></span> All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <div class="main-area">
+            <div class="currency-display">
+                <div>🍪 Cookie Empire 🍪</div>
+                <div class="cookie-counter" id="cookieDisplay">0</div>
+                <div class="per-second" id="perSecond">0 per second</div>
+            </div>
+
+            <button class="click-button" id="clickButton">🍪</button>
+
+            <div class="world-selector">
+                <button class="world-btn active" data-world="0">🌍 Earth</button>
+                <button class="world-btn" data-world="1">🌙 Moon</button>
+                <button class="world-btn" data-world="2">⭐ Space</button>
+                <button class="world-btn" data-world="3">🔥 Hell</button>
+            </div>
+
+            <div id="worldMessage" style="font-size: 18px; color: #764ba2; font-weight: bold; margin-top: 20px;"></div>
+        </div>
+
+        <div class="sidebar">
+            <div class="stats-section">
+                <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #764ba2;">📊 Stats</div>
+                <div class="stat-line">
+                    <span>Total Cookies:</span>
+                    <span id="totalCookies">0</span>
+                </div>
+                <div class="stat-line">
+                    <span>Clicks:</span>
+                    <span id="clicks">0</span>
+                </div>
+                <div class="stat-line">
+                    <span>Prestige:</span>
+                    <span id="prestigeLevel">0</span>
+                </div>
+                <div class="stat-line">
+                    <span>Current Multiplier:</span>
+                    <span id="multiplier">x1.0</span>
+                </div>
+            </div>
+
+            <button class="prestige-btn" id="prestigeBtn">🎆 PRESTIGE 🎆<br><span id="prestigeReward">0 Prestige Pts</span></button>
+
+            <div class="section-title">🏢 Buildings</div>
+            <div class="scrollable" id="buildingsContainer"></div>
+
+            <div class="section-title">⭐ Upgrades</div>
+            <div class="scrollable" id="upgradesContainer"></div>
+
+            <div class="minigame-section">
+                <div style="font-size: 12px; font-weight: bold;">🎮 Minigames</div>
+                <button class="minigame-btn" onclick="launchCookieFarm()">🚜 Farm</button>
+                <button class="minigame-btn" onclick="launchLuckyClick()">🍀 Lucky</button>
+                <button class="minigame-btn" onclick="launchUpgradeRush()">⚡ Rush</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="prestigeModal">
+        <div class="modal-content">
+            <div class="modal-title">🎆 ASCEND TO PRESTIGE 🎆</div>
+            <div class="modal-text">You will lose all cookies and buildings, but gain<br><strong id="modalPrestigePoints">0</strong> Prestige Points!</div>
+            <div class="modal-text">These grant a permanent <strong>2% cookie multiplier</strong> each!</div>
+            <div class="modal-buttons">
+                <button class="modal-btn confirm" onclick="confirmPrestige()">Prestige!</button>
+                <button class="modal-btn cancel" onclick="closePrestigeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="minigameModal">
+        <div class="modal-content">
+            <div class="modal-title" id="minigameTitle">Minigame</div>
+            <div id="minigameContent"></div>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel" onclick="closeMinigame()" style="flex: 1;">Close</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Game state
+        const gameState = {
+            cookies: 0,
+            totalCookies: 0,
+            clicks: 0,
+            prestigeLevel: 0,
+            currentWorld: 0,
+            buildings: {},
+            buildingLevels: {},
+            upgrades: {},
+            upgradePurchased: {},
+            achievements: {}
+        };
+
+        // Building definitions
+        const buildings = {
+            cursor: { name: '👆 Cursor', baseCost: 15, production: 0.1 },
+            grandma: { name: '👵 Grandma', baseCost: 100, production: 1 },
+            farm: { name: '🌾 Farm', baseCost: 1100, production: 8 },
+            mine: { name: '⛏️ Mine', baseCost: 12000, production: 47 },
+            factory: { name: '🏭 Factory', baseCost: 130000, production: 260 },
+            bank: { name: '🏦 Bank', baseCost: 1400000, production: 1400 },
+            temple: { name: '🏛️ Temple', baseCost: 20000000, production: 7800 },
+            station: { name: '🚀 Station', baseCost: 330000000, production: 44000 }
+        };
+
+        // Upgrade definitions
+        const upgrades = {
+            doubleClick: { name: 'Double Click', desc: '+100% click power', cost: 100, effect: () => { gameState.clickPower = (gameState.clickPower || 1) * 2; }, world: 0 },
+            moreCursors: { name: 'Ergonomic Cursors', desc: 'Cursors +25% production', cost: 300, effect: () => { applyBuildingUpgrade('cursor', 1.25); }, world: 0 },
+            grandmaRebel: { name: 'Rebellion', desc: 'Grandmas 2x efficient', cost: 1000, effect: () => { applyBuildingUpgrade('grandma', 2); }, world: 0 },
+            moonRocket: { name: 'Moon Rocket', desc: 'Unlock 🌙 World', cost: 10000, effect: () => {}, world: 0 },
+            spaceGate: { name: 'Space Gate', desc: 'Unlock ⭐ World', cost: 1000000, effect: () => {}, world: 0 },
+            hellPortal: { name: 'Hell Portal', desc: 'Unlock 🔥 World', cost: 100000000, effect: () => {}, world: 0 },
+            farmExpansion: { name: 'Farm Expansion', desc: 'Farms +50% production', cost: 5000, effect: () => { applyBuildingUpgrade('farm', 1.5); }, world: 1 },
+            mineUpgrade: { name: 'Deep Mine', desc: 'Mines +100% prod', cost: 50000, effect: () => { applyBuildingUpgrade('mine', 2); }, world: 1 },
+            factoryRobot: { name: 'Robots', desc: 'Factories 2x fast', cost: 500000, effect: () => { applyBuildingUpgrade('factory', 2); }, world: 2 },
+            hellBoost: { name: 'Hellfire', desc: 'All prod +666%', cost: 500000000, effect: () => { boostAllProduction(7.66); }, world: 3 }
+        };
+
+        // Achievements
+        const achievements = {
+            firstClick: { name: 'First Cookie', trigger: () => gameState.clicks >= 1 },
+            hundred: { name: 'Century', trigger: () => gameState.totalCookies >= 100 },
+            thousand: { name: 'Millionaire Dreams', trigger: () => gameState.totalCookies >= 1000 },
+            tenThousand: { name: 'Big Time', trigger: () => gameState.totalCookies >= 10000 },
+            million: { name: '$1M Net Worth', trigger: () => gameState.totalCookies >= 1000000 },
+            firstPrestige: { name: 'Ascended', trigger: () => gameState.prestigeLevel >= 1 },
+            prestigeLord: { name: 'Prestige Lord', trigger: () => gameState.prestigeLevel >= 100 },
+            easyUpgrade: { name: 'Already Upgraded', trigger: () => Object.values(gameState.upgradePurchased).filter(v => v).length >= 1 },
+            allBuildings: { name: 'Landlord', trigger: () => Object.values(gameState.buildings).some(v => v > 0) && Object.keys(gameState.buildings).length === Object.keys(buildings).length },
+            worldTraveler: { name: 'World Traveler', trigger: () => gameState.visitedWorlds >= 4 }
+        };
+
+        // Initialize
+        function initGame() {
+            gameState.clickPower = 1;
+            gameState.visitedWorlds = 0;
+            
+            Object.keys(buildings).forEach(key => {
+                gameState.buildings[key] = 0;
+                gameState.buildingLevels[key] = 0;
+            });
+
+            Object.keys(upgrades).forEach(key => {
+                gameState.upgradePurchased[key] = false;
+            });
+
+            Object.keys(achievements).forEach(key => {
+                gameState.achievements[key] = false;
+            });
+
+            loadGame();
+            setupEventListeners();
+            renderGame();
+            
+            setInterval(saveGame, 10000);
+            setInterval(autoProduction, 100);
+            setInterval(checkAchievements, 1000);
+            setInterval(triggerRandomEvent, 30000);
+        }
+
+        function setupEventListeners() {
+            document.getElementById('clickButton').addEventListener('click', clickCookie);
+
+            document.querySelectorAll('.world-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.world-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    gameState.currentWorld = parseInt(e.target.dataset.world);
+                    gameState.visitedWorlds = Math.max(gameState.visitedWorlds, gameState.currentWorld + 1);
+                    renderGame();
+                });
+            });
+
+            document.getElementById('prestigeBtn').addEventListener('click', openPrestigeModal);
+        }
+
+        function clickCookie(e) {
+            const clickValue = 1 * (gameState.clickPower || 1) * (1 + gameState.prestigeLevel * 0.02);
+            gameState.cookies += clickValue;
+            gameState.totalCookies += clickValue;
+            gameState.clicks++;
+
+            createClickEffect(e, '+' + Math.floor(clickValue));
+            renderGame();
+        }
+
+        function createClickEffect(e, text) {
+            const effect = document.createElement('div');
+            effect.className = 'click-effect';
+            effect.textContent = text;
+            effect.style.left = (e.pageX || e.clientX) + 'px';
+            effect.style.top = (e.pageY || e.clientY) + 'px';
+            document.body.appendChild(effect);
+            setTimeout(() => effect.remove(), 1500);
+        }
+
+        function autoProduction() {
+            let production = 0;
+            
+            Object.keys(buildings).forEach(key => {
+                const count = gameState.buildings[key];
+                if (count > 0) {
+                    production += count * buildings[key].production;
+                }
+            });
+
+            production *= (1 + gameState.prestigeLevel * 0.02);
+            gameState.cookies += production / 10;
+            gameState.totalCookies += production / 10;
+        }
+
+        function renderGame() {
+            document.getElementById('cookieDisplay').textContent = formatNumber(gameState.cookies);
+            document.getElementById('totalCookies').textContent = formatNumber(gameState.totalCookies);
+            document.getElementById('clicks').textContent = gameState.clicks;
+            document.getElementById('prestigeLevel').textContent = gameState.prestigeLevel;
+            document.getElementById('multiplier').textContent = 'x' + (1 + gameState.prestigeLevel * 0.02).toFixed(2);
+
+            const perSecond = calculateProductionPerSecond();
+            document.getElementById('perSecond').textContent = formatNumber(perSecond) + ' per second';
+
+            const prestigePoints = calculatePrestigePoints();
+            document.getElementById('prestigeReward').textContent = prestigePoints + ' Prestige Pts';
+            document.getElementById('prestigeBtn').disabled = prestigePoints < 1;
+
+            const worldMessages = ['🌍 Baking on Earth', '🌙 Moon cookies!', '⭐ Space cookies!', '🔥 HELL COOKIES! 🔥'];
+            document.getElementById('worldMessage').textContent = worldMessages[gameState.currentWorld];
+
+            renderBuildings();
+            renderUpgrades();
+        }
+
+        function renderBuildings() {
+            const container = document.getElementById('buildingsContainer');
+            container.innerHTML = '';
+
+            Object.keys(buildings).forEach(key => {
+                const building = buildings[key];
+                const owned = gameState.buildings[key];
+                const cost = calculateBuildingCost(key);
+                const canAfford = gameState.cookies >= cost;
+
+                const div = document.createElement('div');
+                div.className = `building-item ${canAfford ? 'affordable' : 'not-affordable'}`;
+                div.onclick = () => buyBuilding(key);
+
+                div.innerHTML = `
+                    <div class="item-name">${building.name}</div>
+                    <div class="item-info">Owned: ${owned}</div>
+                    <div class="item-info">Each: +${formatNumber(building.production * (gameState.buildingLevels[key] || 1))} /s</div>
+                    <div class="level-indicator">Lvl ${gameState.buildingLevels[key] || 0}</div>
+                    <div class="item-cost">Cost: ${formatNumber(cost)} 🍪</div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderUpgrades() {
+            const container = document.getElementById('upgradesContainer');
+            container.innerHTML = '';
+
+            Object.keys(upgrades).forEach(key => {
+                if (gameState.upgradePurchased[key]) return;
+                
+                const upgrade = upgrades[key];
+                if (upgrade.world !== gameState.currentWorld) return;
+
+                const canAfford = gameState.cookies >= upgrade.cost;
+                
+                const div = document.createElement('div');
+                div.className = `upgrade-item ${canAfford ? 'affordable' : 'not-affordable'}`;
+                div.onclick = () => buyUpgrade(key);
+
+                div.innerHTML = `
+                    <div class="item-name">${upgrade.name}</div>
+                    <div class="item-info">${upgrade.desc}</div>
+                    <div class="item-cost">Cost: ${formatNumber(upgrade.cost)} 🍪</div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function buyBuilding(key) {
+            const cost = calculateBuildingCost(key);
+            if (gameState.cookies >= cost) {
+                gameState.cookies -= cost;
+                gameState.buildings[key]++;
+                gameState.buildingLevels[key] = (gameState.buildingLevels[key] || 0) + 1;
+                renderGame();
+            }
+        }
+
+        function buyUpgrade(key) {
+            const upgrade = upgrades[key];
+            if (gameState.cookies >= upgrade.cost && !gameState.upgradePurchased[key]) {
+                gameState.cookies -= upgrade.cost;
+                gameState.upgradePurchased[key] = true;
+                upgrade.effect();
+                createAchievementPopup('⭐ Upgrade!', upgrade.name, 0);
+                renderGame();
+            }
+        }
+
+        function calculateBuildingCost(key) {
+            const building = buildings[key];
+            const owned = gameState.buildings[key];
+            return Math.floor(building.baseCost * Math.pow(1.15, owned));
+        }
+
+        function calculateProductionPerSecond() {
+            let production = 0;
+            Object.keys(buildings).forEach(key => {
+                const count = gameState.buildings[key];
+                if (count > 0) {
+                    production += count * buildings[key].production * (gameState.buildingLevels[key] || 1);
+                }
+            });
+            return production * (1 + gameState.prestigeLevel * 0.02);
+        }
+
+        function calculatePrestigePoints() {
+            return Math.floor(Math.sqrt(gameState.totalCookies / 100000));
+        }
+
+        function openPrestigeModal() {
+            const points = calculatePrestigePoints();
+            if (points < 1) return;
+            document.getElementById('modalPrestigePoints').textContent = points;
+            document.getElementById('prestigeModal').classList.add('active');
+        }
+
+        function closePrestigeModal() {
+            document.getElementById('prestigeModal').classList.remove('active');
+        }
+
+        function confirmPrestige() {
+            const points = calculatePrestigePoints();
+            gameState.prestigeLevel += points;
+            gameState.cookies = 0;
+            gameState.buildings = {};
+            gameState.buildingLevels = {};
+            gameState.upgradePurchased = {};
+            
+            Object.keys(buildings).forEach(key => {
+                gameState.buildings[key] = 0;
+                gameState.buildingLevels[key] = 0;
+            });
+
+            createAchievementPopup('🎆 PRESTIGE! 🎆', `+${points} Points!`, 5000);
+            closePrestigeModal();
+            renderGame();
+        }
+
+        function applyBuildingUpgrade(buildingKey, multiplier) {
+            gameState.buildingLevels[buildingKey] = (gameState.buildingLevels[buildingKey] || 1) * multiplier;
+        }
+
+        function boostAllProduction(multiplier) {
+            Object.keys(gameState.buildingLevels).forEach(key => {
+                gameState.buildingLevels[key] = (gameState.buildingLevels[key] || 1) * multiplier;
+            });
+        }
+
+        function checkAchievements() {
+            Object.keys(achievements).forEach(key => {
+                if (!gameState.achievements[key] && achievements[key].trigger()) {
+                    gameState.achievements[key] = true;
+                    createAchievementPopup('🏆 Achievement!', achievements[key].name, 3000);
+                }
+            });
+        }
+
+        function createAchievementPopup(title, desc, duration = 2000) {
+            const popup = document.createElement('div');
+            popup.className = 'achievement-popup';
+            popup.innerHTML = `
+                <div class="achievement-title">${title}</div>
+                <div class="achievement-desc">${desc}</div>
+            `;
+            document.body.appendChild(popup);
+            setTimeout(() => popup.remove(), duration);
+        }
+
+        function triggerRandomEvent() {
+            const events = [
+                { name: 'Lucky Click!', bonus: () => { gameState.cookies += gameState.totalCookies * 0.1; }, msg: '+10% cookies!' },
+                { name: 'Surge!', bonus: () => { gameState.cookies += calculateProductionPerSecond() * 5; }, msg: '+5s production!' },
+                { name: 'Rain!', bonus: () => { gameState.cookies += gameState.totalCookies * 0.05; }, msg: '+5% cookies!' }
+            ];
+
+            const event = events[Math.floor(Math.random() * events.length)];
+            event.bonus();
+            createAchievementPopup('✨ ' + event.name, event.msg, 2000);
+        }
+
+        function formatNumber(num) {
+            if (num >= 1e12) return (num / 1e12).toFixed(2) + 'T';
+            if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B';
+            if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M';
+            if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K';
+            return Math.floor(num).toString();
+        }
+
+        function launchCookieFarm() {
+            const farmProduction = calculateProductionPerSecond() * 30;
+            const gain = Math.floor(farmProduction * (0.5 + Math.random()));
+            document.getElementById('minigameTitle').textContent = '🚜 Cookie Farm';
+            document.getElementById('minigameContent').innerHTML = `
+                <div style="font-size: 20px; margin: 20px 0;">Your farm produced:</div>
+                <div style="font-size: 36px; color: #f5576c; font-weight: bold;">+${formatNumber(gain)} 🍪</div>
+                <div style="font-size: 14px; margin-top: 20px; color: #999;">Lucky harvest!</div>
+            `;
+            gameState.cookies += gain;
+            document.getElementById('minigameModal').classList.add('active');
+            renderGame();
+        }
+
+        function launchLuckyClick() {
+            const multipliers = [0.5, 1, 1.5, 2, 3, 5, 10];
+            const chosen = multipliers[Math.floor(Math.random() * multipliers.length)];
+            const prize = Math.floor(calculateProductionPerSecond() * chosen);
+            document.getElementById('minigameTitle').textContent = '🍀 Lucky Click';
+            document.getElementById('minigameContent').innerHTML = `
+                <div style="font-size: 20px; margin: 20px 0;">You won:</div>
+                <div style="font-size: 36px; color: #f5576c; font-weight: bold;">+${formatNumber(prize)} 🍪</div>
+                <div style="font-size: 14px; margin-top: 20px; color: #999;">x${chosen} multiplier!</div>
+            `;
+            gameState.cookies += prize;
+            document.getElementById('minigameModal').classList.add('active');
+            renderGame();
+        }
+
+        function launchUpgradeRush() {
+            const availableUpgrades = Object.keys(upgrades).filter(k => !gameState.upgradePurchased[k]);
+            if (availableUpgrades.length === 0) {
+                document.getElementById('minigameContent').innerHTML = '<div>No upgrades available!</div>';
+            } else {
+                const discount = 0.5;
+                const saved = Array.from(availableUpgrades).slice(0, 3).reduce((sum, k) => sum + upgrades[k].cost * discount, 0);
+                document.getElementById('minigameTitle').textContent = '⚡ Upgrade Rush';
+                document.getElementById('minigameContent').innerHTML = `
+                    <div style="font-size: 20px; margin: 20px 0;">50% off next 3 upgrades!</div>
+                    <div style="font-size: 20px; color: #f5576c; font-weight: bold;">Save ~${formatNumber(saved)} 🍪</div>
+                `;
+            }
+            document.getElementById('minigameModal').classList.add('active');
+        }
+
+        function closeMinigame() {
+            document.getElementById('minigameModal').classList.remove('active');
+        }
+
+        function saveGame() {
+            localStorage.setItem('cookieEmpireGameState', JSON.stringify(gameState));
+        }
+
+        function loadGame() {
+            const saved = localStorage.getItem('cookieEmpireGameState');
+            if (saved) {
+                Object.assign(gameState, JSON.parse(saved));
+            }
+        }
+
+        initGame();
     </script>
 </body>
 </html>
