@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -121,7 +122,8 @@
             padding-bottom: 5px;
         }
 
-        .building-item, .upgrade-item {
+        .building-item,
+        .upgrade-item {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 12px;
@@ -132,22 +134,26 @@
             margin-bottom: 8px;
         }
 
-        .building-item:hover, .upgrade-item:hover {
+        .building-item:hover,
+        .upgrade-item:hover {
             transform: translateX(5px);
             border-color: #f5576c;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .building-item.affordable, .upgrade-item.affordable {
+        .building-item.affordable,
+        .upgrade-item.affordable {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
 
-        .building-item.not-affordable, .upgrade-item.not-affordable {
+        .building-item.not-affordable,
+        .upgrade-item.not-affordable {
             opacity: 0.6;
             cursor: not-allowed;
         }
 
-        .building-item.not-affordable:hover, .upgrade-item.not-affordable:hover {
+        .building-item.not-affordable:hover,
+        .upgrade-item.not-affordable:hover {
             transform: none;
             border-color: transparent;
             box-shadow: none;
@@ -253,6 +259,7 @@
                 transform: translateX(400px);
                 opacity: 0;
             }
+
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -327,6 +334,7 @@
                 transform: scale(0.8);
                 opacity: 0;
             }
+
             to {
                 transform: scale(1);
                 opacity: 1;
@@ -391,6 +399,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="main-area">
@@ -433,7 +442,8 @@
                 </div>
             </div>
 
-            <button class="prestige-btn" id="prestigeBtn">🎆 PRESTIGE 🎆<br><span id="prestigeReward">0 Prestige Pts</span></button>
+            <button class="prestige-btn" id="prestigeBtn">🎆 PRESTIGE 🎆<br><span id="prestigeReward">0 Prestige
+                    Pts</span></button>
 
             <div class="section-title">🏢 Buildings</div>
             <div class="scrollable" id="buildingsContainer"></div>
@@ -453,7 +463,8 @@
     <div class="modal" id="prestigeModal">
         <div class="modal-content">
             <div class="modal-title">🎆 ASCEND TO PRESTIGE 🎆</div>
-            <div class="modal-text">You will lose all cookies and buildings, but gain<br><strong id="modalPrestigePoints">0</strong> Prestige Points!</div>
+            <div class="modal-text">You will lose all cookies and buildings, but gain<br><strong
+                    id="modalPrestigePoints">0</strong> Prestige Points!</div>
             <div class="modal-text">These grant a permanent <strong>2% cookie multiplier</strong> each!</div>
             <div class="modal-buttons">
                 <button class="modal-btn confirm" onclick="confirmPrestige()">Prestige!</button>
@@ -504,9 +515,9 @@
             doubleClick: { name: 'Double Click', desc: '+100% click power', cost: 100, effect: () => { gameState.clickPower = (gameState.clickPower || 1) * 2; }, world: 0 },
             moreCursors: { name: 'Ergonomic Cursors', desc: 'Cursors +25% production', cost: 300, effect: () => { applyBuildingUpgrade('cursor', 1.25); }, world: 0 },
             grandmaRebel: { name: 'Rebellion', desc: 'Grandmas 2x efficient', cost: 1000, effect: () => { applyBuildingUpgrade('grandma', 2); }, world: 0 },
-            moonRocket: { name: 'Moon Rocket', desc: 'Unlock 🌙 World', cost: 10000, effect: () => {}, world: 0 },
-            spaceGate: { name: 'Space Gate', desc: 'Unlock ⭐ World', cost: 1000000, effect: () => {}, world: 0 },
-            hellPortal: { name: 'Hell Portal', desc: 'Unlock 🔥 World', cost: 100000000, effect: () => {}, world: 0 },
+            moonRocket: { name: 'Moon Rocket', desc: 'Unlock 🌙 World', cost: 10000, effect: () => { }, world: 0 },
+            spaceGate: { name: 'Space Gate', desc: 'Unlock ⭐ World', cost: 1000000, effect: () => { }, world: 0 },
+            hellPortal: { name: 'Hell Portal', desc: 'Unlock 🔥 World', cost: 100000000, effect: () => { }, world: 0 },
             farmExpansion: { name: 'Farm Expansion', desc: 'Farms +50% production', cost: 5000, effect: () => { applyBuildingUpgrade('farm', 1.5); }, world: 1 },
             mineUpgrade: { name: 'Deep Mine', desc: 'Mines +100% prod', cost: 50000, effect: () => { applyBuildingUpgrade('mine', 2); }, world: 1 },
             factoryRobot: { name: 'Robots', desc: 'Factories 2x fast', cost: 500000, effect: () => { applyBuildingUpgrade('factory', 2); }, world: 2 },
@@ -531,7 +542,7 @@
         function initGame() {
             gameState.clickPower = 1;
             gameState.visitedWorlds = 0;
-            
+
             Object.keys(buildings).forEach(key => {
                 gameState.buildings[key] = 0;
                 gameState.buildingLevels[key] = 0;
@@ -548,7 +559,7 @@
             loadGame();
             setupEventListeners();
             renderGame();
-            
+
             setInterval(saveGame, 10000);
             setInterval(autoProduction, 100);
             setInterval(checkAchievements, 1000);
@@ -593,7 +604,7 @@
 
         function autoProduction() {
             let production = 0;
-            
+
             Object.keys(buildings).forEach(key => {
                 const count = gameState.buildings[key];
                 if (count > 0) {
@@ -658,12 +669,12 @@
 
             Object.keys(upgrades).forEach(key => {
                 if (gameState.upgradePurchased[key]) return;
-                
+
                 const upgrade = upgrades[key];
                 if (upgrade.world !== gameState.currentWorld) return;
 
                 const canAfford = gameState.cookies >= upgrade.cost;
-                
+
                 const div = document.createElement('div');
                 div.className = `upgrade-item ${canAfford ? 'affordable' : 'not-affordable'}`;
                 div.onclick = () => buyUpgrade(key);
@@ -737,7 +748,7 @@
             gameState.buildings = {};
             gameState.buildingLevels = {};
             gameState.upgradePurchased = {};
-            
+
             Object.keys(buildings).forEach(key => {
                 gameState.buildings[key] = 0;
                 gameState.buildingLevels[key] = 0;
@@ -861,4 +872,5 @@
         initGame();
     </script>
 </body>
+
 </html>
