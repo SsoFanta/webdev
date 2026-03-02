@@ -1,0 +1,53 @@
+   body {
+       background-color: #a5cff8;
+       font-family: Arial, sans-serif;
+   }
+
+   h1 {
+       color: #1d68bd;
+       text-align: center;
+       font-family: sans-serif;
+   }
+
+
+
+   p {
+       color: #5858ce;
+       padding-bottom: 5px;
+       text-align: center;
+       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+
+
+
+   img {
+       border: 5px solid #000000;
+       border-radius: 10px;
+       margin-left: 28%;
+       width: 400px;
+       height:300px
+    }
+
+    
+   video {
+       border: 5px solid #000000;
+       border-radius: 10px;
+       width: 400px;
+       height:300px
+    }
+
+    iframe {
+       border: 5px solid #000000;
+       border-radius: 10px;
+       text-align: center;
+       margin-left: 25%;
+       width: 50%;
+       height: 400px;
+    }
+
+       audio {
+       text-align: center;
+       margin-left: 25%;
+       width: 50%;
+    }
+

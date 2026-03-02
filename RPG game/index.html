@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JDM Drift Circuit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="track-wrap">
+      <canvas id="game" width="1200" height="700" aria-label="Top-down drift game"></canvas>
+      <div class="hud-top">
+        <div class="pill"><span>Car</span><strong id="carName">-</strong></div>
+        <div class="pill"><span>Speed</span><strong id="speedReadout">0 mph</strong></div>
+        <div class="pill"><span>Gear</span><strong id="gearReadout">N</strong></div>
+        <div class="pill"><span>Lap</span><strong id="lapReadout">0</strong></div>
+      </div>
+      <div class="hud-bottom">
+        <div class="meter-block">
+          <label>Throttle</label>
+          <div class="meter"><div id="throttleBar"></div></div>
+        </div>
+        <div class="meter-block">
+          <label>Brake</label>
+          <div class="meter"><div id="brakeBar"></div></div>
+        </div>
+        <div class="meter-block">
+          <label>Drift Angle</label>
+          <div class="meter"><div id="slipBar"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <h1>JDM Drift Circuit</h1>
+      <p class="subtitle">Top-down technical drift with model-inspired JDM cars.</p>
+
+      <section class="group">
+        <h2>Garage</h2>
+        <div id="carList" class="car-list"></div>
+      </section>
+
+      <section class="group">
+        <h2>Run Stats</h2>
+        <p id="sessionStats">Score 0 | Best Lap --.--s</p>
+        <p id="driftStats">No drift chain</p>
+      </section>
+
+      <section class="group">
+        <h2>Controls</h2>
+        <ul>
+          <li>Throttle: W / Arrow Up</li>
+          <li>Brake / Reverse: S / Arrow Down</li>
+          <li>Steer: A D / Arrow Left Right</li>
+          <li>Handbrake: Space</li>
+          <li>Reset car: R</li>
+        </ul>
+      </section>
+
+      <p id="message" class="message">Select a car and keep your slides controlled.</p>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

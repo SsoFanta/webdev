@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Starforge: Cosmic Idle</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 30% 30%, #1b2d5a, #02030a 70%),
+        url("nebula.png"); /* AI ART SLOT */
+    color: #e8ecff;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    height: 100vh;
+}
+
+#main {
+    padding: 20px;
+}
+
+#sidebar {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    padding: 15px;
+    overflow-y: auto;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+button {
+    width: 100%;
+    margin: 6px 0;
+    padding: 10px;
+    background: linear-gradient(#2a3fa0, #1b2c6b);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+.stat { margin: 6px 0; }
+.small { font-size: 12px; opacity: 0.75; }
+
+#star {
+    margin-top: 40px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 30%, #b8f1ff, #2a5d9f 60%, #08142c);
+    box-shadow:
+        0 0 40px #5fc9ff,
+        inset 0 0 30px #ffffff33;
+    cursor: pointer;
+    animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 35px #5fc9ff; }
+    50% { box-shadow: 0 0 60px #8fe3ff; }
+    100% { box-shadow: 0 0 35px #5fc9ff; }
+}
+
+#event {
+    color: #ffd27d;
+    font-size: 14px;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+<div id="game">
+<div id="main">
+    <h1>🌌 Starforge: Cosmic Idle</h1>
+
+    <div class="stat">Stellar Energy: <b id="energy">0</b></div>
+    <div class="stat">Per Second: <b id="perSecond">0</b></div>
+    <div class="stat small">Singularity Shards: <b id="shards">0</b></div>
+
+    <div id="star" title="Stabilize the Star"></div>
+    <div id="event"></div>
+</div>
+
+<div id="sidebar">
+    <h2>Generators</h2>
+    <div id="generators"></div>
+
+    <h2>Upgrades</h2>
+    <div id="upgrades"></div>
+
+    <h2>Prestige</h2>
+    <button onclick="prestige()">🌠 Nova Collapse</button>
+    <div class="small">Reshape reality for permanent power.</div>
+</div>
+</div>
+
+<script>
+let game = {
+    energy: 0,
+    totalEnergy: 0,
+    clickPower: 1,
+    shards: 0,
+    lastUpdate: Date.now(),
+
+    generators: [
+        { name:"Solar Drone", base:10, count:0, rate:0.6 },
+        { name:"Orbital Collector", base:120, count:0, rate:6 },
+        { name:"Fusion Spire", base:900, count:0, rate:35 },
+        { name:"Dyson Array", base:6000, count:0, rate:180 },
+        { name:"Star Foundry", base:45000, count:0, rate:900 },
+        { name:"Nebula Harvester", base:350000, count:0, rate:4200 },
+        { name:"Galactic Core", base:3e6, count:0, rate:20000 },
+        { name:"Reality Engine", base:2.5e7, count:0, rate:120000 }
+    ],
+
+    upgrades: [
+        { name:"Photon Compression", cost:50, bought:false, effect:()=>game.clickPower*=2 },
+        { name:"Overclocked Drones", cost:300, bought:false, effect:()=>multGen(0,1.5) },
+        { name:"Orbital AI", cost:1200, bought:false, effect:()=>multAll(1.25) },
+        { name:"Stellar Feedback Loop", cost:6000, bought:false, effect:()=>game.clickPower*=3 },
+        { name:"Dyson Optimization", cost:20000, bought:false, effect:()=>multGen(3,2) },
+        { name:"Nebula Compression", cost:90000, bought:false, effect:()=>multAll(1.4) },
+        { name:"Galactic Synergy", cost:500000, bought:false, effect:()=>multAll(1.6) },
+        { name:"Reality Fracture", cost:4e6, bought:false, effect:()=>multAll(2) }
+    ]
+};
+
+function format(n){
+    if(n<1000) return n.toFixed(1);
+    let u=["K","M","B","T","Qa"];
+    let i=-1;
+    while(n>=1000&&i<u.length-1){n/=1000;i++;}
+    return n.toFixed(2)+u[i];
+}
+
+function perSecond(){
+    let base=game.generators.reduce((s,g)=>s+g.count*g.rate,0);
+    return base*(1+game.shards*0.15);
+}
+
+function multAll(m){ game.generators.forEach(g=>g.rate*=m); }
+function multGen(i,m){ game.generators[i].rate*=m; }
+
+document.getElementById("star").onclick=()=>{
+    let gain=game.clickPower*(1+game.shards*0.07);
+    game.energy+=gain;
+    game.totalEnergy+=gain;
+};
+
+function buyGen(i){
+    let g=game.generators[i];
+    let cost=g.base*Math.pow(1.16,g.count);
+    if(game.energy>=cost){game.energy-=cost;g.count++;}
+}
+
+function buyUpgrade(i){
+    let u=game.upgrades[i];
+    if(!u.bought&&game.energy>=u.cost){
+        game.energy-=u.cost;
+        u.bought=true;
+        u.effect();
+    }
+}
+
+function prestige(){
+    let gained=Math.floor(Math.sqrt(game.totalEnergy/8000));
+    if(gained<=0)return;
+    game.shards+=gained;
+    game.energy=0;
+    game.totalEnergy=0;
+    game.clickPower=1;
+    game.generators.forEach(g=>g.count=0);
+    game.upgrades.forEach(u=>u.bought=false);
+}
+
+function updateUI(){
+    energy.textContent=format(game.energy);
+    perSecond.textContent=format(perSecond());
+    shards.textContent=game.shards;
+
+    generators.innerHTML="";
+    game.generators.forEach((g,i)=>{
+        let cost=g.base*Math.pow(1.16,g.count);
+        generators.innerHTML+=
+        `<button onclick="buyGen(${i})">${g.name} (${g.count})<br>Cost: ${format(cost)}</button>`;
+    });
+
+    upgrades.innerHTML="";
+    game.upgrades.forEach((u,i)=>{
+        if(!u.bought)
+            upgrades.innerHTML+=
+            `<button onclick="buyUpgrade(${i})">${u.name}<br>Cost: ${format(u.cost)}</button>`;
+    });
+}
+
+function tick(){
+    let now=Date.now();
+    let dt=(now-game.lastUpdate)/1000;
+    game.lastUpdate=now;
+
+    let gain=perSecond()*dt;
+    game.energy+=gain;
+    game.totalEnergy+=gain;
+
+    if(Math.random()<0.002){
+        event.textContent="🌠 Cosmic Surge! Production +15%";
+        multAll(1.15);
+        setTimeout(()=>event.textContent="",4000);
+    }
+
+    updateUI();
+    localStorage.setItem("starforgeSave",JSON.stringify(game));
+}
+
+let save=localStorage.getItem("starforgeSave");
+if(save) game=JSON.parse(save);
+
+setInterval(tick,100);
+</script>
+</body>
+</html>

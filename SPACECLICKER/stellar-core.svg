@@ -1,0 +1,26 @@
+<svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="core" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(350 350) rotate(90) scale(180)">
+      <stop stop-color="#FFF6C2"/>
+      <stop offset="0.3" stop-color="#FFD07A"/>
+      <stop offset="0.6" stop-color="#FF8CCC"/>
+      <stop offset="1" stop-color="#66D9FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(350 350) rotate(90) scale(300)">
+      <stop offset="0.4" stop-color="#7BE4FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7BE4FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="0" y="0" width="700" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <circle cx="350" cy="350" r="300" fill="url(#halo)"/>
+  <g filter="url(#blur)">
+    <path d="M350 120C380 240 460 320 580 350C460 380 380 460 350 580C320 460 240 380 120 350C240 320 320 240 350 120Z" fill="#9EE9FF" fill-opacity="0.5"/>
+    <path d="M350 80C365 220 480 335 620 350C480 365 365 480 350 620C335 480 220 365 80 350C220 335 335 220 350 80Z" fill="#CB9DFF" fill-opacity="0.35"/>
+  </g>
+  <circle cx="350" cy="350" r="182" fill="url(#core)"/>
+  <circle cx="350" cy="350" r="88" fill="#FFF2B0" fill-opacity="0.72"/>
+  <circle cx="315" cy="312" r="28" fill="#FFFEE1" fill-opacity="0.75"/>
+</svg>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nebula Forge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="starfield" aria-hidden="true"></div>
+    <div id="eventFlash" class="event-flash" aria-hidden="true"></div>
+    <main class="layout">
+      <header class="panel title-panel">
+        <h1>Nebula Forge</h1>
+        <p>Harvest stardust. Build an interstellar industry. Bend the galaxy to your click.</p>
+      </header>
+
+      <section class="panel stats-panel" aria-live="polite">
+        <div class="stat-block">
+          <span class="label">Stardust</span>
+          <strong id="stardust">0</strong>
+        </div>
+        <div class="stat-block">
+          <span class="label">Per second</span>
+          <strong id="sps">0</strong>
+        </div>
+        <div class="stat-block">
+          <span class="label">Total harvested</span>
+          <strong id="total">0</strong>
+        </div>
+      </section>
+
+      <section class="panel forge-panel">
+        <button id="coreButton" class="core-button" aria-label="Harvest stardust">
+          <img src="stellar-core.svg" alt="Glowing stellar core" />
+          <span>Stellar Core</span>
+        </button>
+        <div class="click-hud">
+          <p id="clickPowerText">Click power: 1</p>
+          <p id="comboText">Combo: x1.00</p>
+          <p id="critText">Crit chance: 5%</p>
+        </div>
+        <div id="floatLayer" class="float-layer" aria-hidden="true"></div>
+      </section>
+
+      <section class="panel upgrades-panel">
+        <div class="shop-header">
+          <h2>Fleet Construction</h2>
+          <div class="buy-controls" role="group" aria-label="Buy amount">
+            <button type="button" class="buy-mode active" data-buy-mode="1">x1</button>
+            <button type="button" class="buy-mode" data-buy-mode="10">x10</button>
+            <button type="button" class="buy-mode" data-buy-mode="max">Max</button>
+          </div>
+        </div>
+        <div id="buildings" class="shop-list"></div>
+      </section>
+
+      <section class="panel tech-panel">
+        <h2>Quantum Research</h2>
+        <div id="research" class="shop-list"></div>
+      </section>
+
+      <section class="panel milestones-panel">
+        <h2>Mission Log</h2>
+        <ul id="milestones"></ul>
+      </section>
+
+      <section class="panel prestige-panel">
+        <h2>Singularity Rebirth</h2>
+        <p class="prestige-copy">
+          Collapse this run and restart from zero to gain permanent <strong>Echoes</strong>.
+        </p>
+        <div class="prestige-stats">
+          <div>
+            <span class="label">Echoes owned</span>
+            <strong id="echoesOwned">0</strong>
+          </div>
+          <div>
+            <span class="label">Echoes if reborn now</span>
+            <strong id="echoesGain">0</strong>
+          </div>
+        </div>
+        <p id="echoBoostText" class="echo-boost">Current boost: +0% production, +0% click power</p>
+        <button id="rebirthBtn" class="rebirth-btn" type="button">Rebirth This Run</button>
+      </section>
+
+      <footer class="panel footer-panel">
+        <button id="saveBtn">Save</button>
+        <button id="resetBtn">Reset</button>
+        <small>Autosaves every 30 seconds.</small>
+      </footer>
+    </main>
+
+    <template id="shopItemTemplate">
+      <button class="shop-item" type="button">
+        <div>
+          <h3></h3>
+          <p class="desc"></p>
+          <p class="owned"></p>
+        </div>
+        <strong class="cost"></strong>
+      </button>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

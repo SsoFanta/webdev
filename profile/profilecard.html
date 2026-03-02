@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile Card</title>
+    <!-- Link to your external CSS file (create a file called style.css) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--
+        This div acts as the container for the card.
+        It uses the "profile-card" class for styling.
+    -->
+    <div class="profile-card">
+
+        <!-- This is the name/title. It's an h2 element. -->
+        <h2>Alex Johnson</h2>
+
+        <!--
+            This paragraph has the class "bio".
+            The lesson plan asks to target this specific class to change the font size.
+        -->
+        <p class="bio">
+            Alex is a front-end developer based in Austin, TX. They love building accessible and beautiful web interfaces.
+        </p>
+
+        <!--
+            This button has a unique ID.
+            The lesson plan asks to target this specific ID to change the background color.
+        -->
+        <button id="submit-btn">Follow Alex</button>
+
+    </div>
+
+    <!--
+        Extra note for the student:
+        You can add more cards below to test the difference between element selectors
+        (which would style ALL h2 tags) and class selectors (which style only specific elements).
+    -->
+    <!--
+    <div class="profile-card">
+        <h2>Another Person</h2>
+        <p class="bio">This is a second card to see how selectors work.</p>
+        <button id="submit-btn">Button</button>
+    </div>
+    <p>This is a regular paragraph outside the card, not affected by the .bio class.</p>
+    -->
+
+</body>
+</html>

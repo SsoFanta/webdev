@@ -1,0 +1,42 @@
+        .bio {
+          font-size: 20px;
+             color: #1dbdb0;
+            text-align: center;
+          line-height:1.5;
+          
+        }
+
+        #submit-btn {
+            background-color: rgb(70, 153, 201);
+            color: white;
+            cursor: pointer;
+            padding:10px 20px;
+        }
+
+        #submit-btn:hover{
+            background-color:#080764;
+
+
+        }
+        
+
+        .profile-card{
+            font-size: 35px;
+             color: #080764;
+            text-align: center;
+            background-color: #6b8097;
+            padding:20px;
+            margin:20px;
+            width:300px;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+
+        h2{
+            font-size: 35px;
+             color: #080764;
+            text-align: center;
+        }
+        body {
+            background-color: rgb(133, 176, 187);
+        }
