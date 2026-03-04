@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\16756f8e4f9f17b0c92b1fb6564352b7\raylib-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\16756f8e4f9f17b0c92b1fb6564352b7\raylib-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\16756f8e4f9f17b0c92b1fb6564352b7\raylib-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\16756f8e4f9f17b0c92b1fb6564352b7\raylib-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\16756f8e4f9f17b0c92b1fb6564352b7\raylib-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\16756f8e4f9f17b0c92b1fb6564352b7\raylib-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\16756f8e4f9f17b0c92b1fb6564352b7\raylib-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\16756f8e4f9f17b0c92b1fb6564352b7\raylib-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\f6f7238528486dca25c2ba350b51ef87\raylib-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\9d24e1bdeec406d36ff00b275bff1fcb\raylib-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-subbuild\CMakeFiles\raylib-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{372E156A-AF22-327C-889B-CCCEC133719F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\JungleDystopiaParkour\build\CMakeFiles\4151bb0070c1d47222fe4c27d94492a1\PACKAGE_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F1E07567-62F3-3FC3-A025-0DF63C77220F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

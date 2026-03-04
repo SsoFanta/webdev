@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\LearnToFlyIdleLike\build\CMakeFiles\f58941e285576932ecf1bdc8e810cd1b\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{7B2B4517-1F1F-3922-9AEB-DC09FA6EDC68}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

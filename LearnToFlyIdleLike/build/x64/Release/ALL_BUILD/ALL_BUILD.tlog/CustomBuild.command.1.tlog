@@ -1,0 +1,10 @@
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\LEARNTOFLYIDLELIKE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/27fantnoaa_washk12/Documents/webdev/LearnToFlyIdleLike -BC:/Users/27fantnoaa_washk12/Documents/webdev/LearnToFlyIdleLike/build --check-stamp-file C:/Users/27fantnoaa_washk12/Documents/webdev/LearnToFlyIdleLike/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

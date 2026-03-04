@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1ACB641B-1A94-3E40-A0C6-896FD46C1289}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

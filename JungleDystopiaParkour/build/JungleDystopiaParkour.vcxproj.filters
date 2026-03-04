@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\27fantnoaa_washk12\Documents\webdev\JungleDystopiaParkour\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\JungleDystopiaParkour\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5AE41EA7-C813-3E9B-B991-185CB4C8CE57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

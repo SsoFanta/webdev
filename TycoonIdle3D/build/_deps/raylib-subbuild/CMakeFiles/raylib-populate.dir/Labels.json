@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/raylib-populate"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/194374f696a23a74215b253a8a5c71b0/raylib-populate.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/44c85fc7ea06e99684564485bb6c58f5/raylib-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/9a42d0990f5a66fcd8afda4d2987fcbe/raylib-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/9a42d0990f5a66fcd8afda4d2987fcbe/raylib-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/9a42d0990f5a66fcd8afda4d2987fcbe/raylib-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/9a42d0990f5a66fcd8afda4d2987fcbe/raylib-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/9a42d0990f5a66fcd8afda4d2987fcbe/raylib-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/9a42d0990f5a66fcd8afda4d2987fcbe/raylib-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/9a42d0990f5a66fcd8afda4d2987fcbe/raylib-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build/_deps/raylib-subbuild/CMakeFiles/9a42d0990f5a66fcd8afda4d2987fcbe/raylib-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"raylib-populate"
+		],
+		"name" : "raylib-populate"
+	}
+}

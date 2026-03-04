@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\CMakeFiles\c37e956d16ae56b27c34aafec6ce15d9\PACKAGE_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D2A324D7-C800-322F-A577-63DC7D6D8D84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

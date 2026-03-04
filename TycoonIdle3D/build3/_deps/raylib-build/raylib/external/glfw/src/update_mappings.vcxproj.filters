@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build3\CMakeFiles\96588869bffa48692612b7228bbdbae7\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\third_party\raylib\src\external\glfw\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\third_party\raylib\src\external\glfw\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\third_party\raylib\src\external\glfw\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build3\_deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{700F08B0-4479-347C-BFCE-68288BEB81BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{97640BD9-7944-3827-8F15-6DE65A7751B6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

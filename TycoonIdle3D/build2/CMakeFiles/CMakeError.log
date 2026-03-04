@@ -1,0 +1,28 @@
+Performing C SOURCE FILE Test COMPILER_HAS_THOSE_TOGGLES failed with the following output:
+Change Dir: C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_e7a88.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.6+a918ceb31 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30159 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D WIN32 /D _WINDOWS /D COMPILER_HAS_THOSE_TOGGLES /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e7a88.dir\Debug\\" /Fd"cmTC_e7a88.dir\Debug\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue  -Werror=pointer-arith C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\CMakeFiles\CMakeTmp\src.c
+cl : command line error D8021: invalid numeric argument '/Werror=pointer-arith' [C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\CMakeFiles\CMakeTmp\cmTC_e7a88.vcxproj]
+
+
+Source file was:
+int main(void) { return 0; }
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_30716.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.6+a918ceb31 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30159 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  CheckIncludeFile.c
+  cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_30716.dir\Debug\\" /Fd"cmTC_30716.dir\Debug\vc142.pdb" /external:W1 /Gd /TC /errorReport:queue C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\CMakeFiles\CMakeTmp\cmTC_30716.vcxproj]
+
+
+

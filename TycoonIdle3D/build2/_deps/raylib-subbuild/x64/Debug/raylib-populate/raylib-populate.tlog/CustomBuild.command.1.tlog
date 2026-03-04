@@ -1,0 +1,162 @@
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\16756F8E4F9F17B0C92B1FB6564352B7\RAYLIB-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug/raylib-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\16756F8E4F9F17B0C92B1FB6564352B7\RAYLIB-POPULATE-DOWNLOAD.RULE
+setlocal
+cd C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug/raylib-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\16756F8E4F9F17B0C92B1FB6564352B7\RAYLIB-POPULATE-UPDATE.RULE
+setlocal
+cd C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/tmp/raylib-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\16756F8E4F9F17B0C92B1FB6564352B7\RAYLIB-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug/raylib-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\16756F8E4F9F17B0C92B1FB6564352B7\RAYLIB-POPULATE-CONFIGURE.RULE
+setlocal
+cd C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug/raylib-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\16756F8E4F9F17B0C92B1FB6564352B7\RAYLIB-POPULATE-BUILD.RULE
+setlocal
+cd C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug/raylib-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\16756F8E4F9F17B0C92B1FB6564352B7\RAYLIB-POPULATE-INSTALL.RULE
+setlocal
+cd C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug/raylib-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\16756F8E4F9F17B0C92B1FB6564352B7\RAYLIB-POPULATE-TEST.RULE
+setlocal
+cd C:\Users\27fantnoaa_washk12\Documents\webdev\TycoonIdle3D\build2\_deps\raylib-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug/raylib-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\F6F7238528486DCA25C2BA350B51EF87\RAYLIB-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/CMakeFiles/Debug/raylib-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/Debug/raylib-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKEFILES\9D24E1BDEEC406D36FF00B275BFF1FCB\RAYLIB-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\27FANTNOAA_WASHK12\DOCUMENTS\WEBDEV\TYCOONIDLE3D\BUILD2\_DEPS\RAYLIB-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild -BC:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild --check-stamp-file C:/Users/27fantnoaa_washk12/Documents/webdev/TycoonIdle3D/build2/_deps/raylib-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
