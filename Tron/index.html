@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRON | Pixel Grid Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Oxanium:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-mode="legacy">
+    <div class="page-shell">
+        <header class="masthead panel">
+            <p class="eyebrow">DIGITAL FRONTIER // PIXEL RECONSTRUCTION</p>
+            <div class="masthead-copy">
+                <div>
+                    <h1>TRON</h1>
+                    <p class="lead">
+                        A full neon tribute built as living retro-futurist art: a helmeted rider,
+                        a believable light cycle silhouette, a reactive skyline, and a
+                        playable arena duel.
+                    </p>
+                </div>
+                <div class="hud-cluster">
+                    <div class="hud-box">
+                        <span class="hud-label">Active Mode</span>
+                        <strong id="mode-name">Legacy Grid</strong>
+                    </div>
+                    <div class="hud-box">
+                        <span class="hud-label">Visual Build</span>
+                        <strong>32-Bit Neon Canvas</strong>
+                    </div>
+                    <div class="hud-box">
+                        <span class="hud-label">Rider Profile</span>
+                        <strong>Human Form Locked In</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="mode-switch" role="tablist" aria-label="Scene modes">
+                <button class="mode-button active" type="button" data-mode="legacy">Legacy Grid</button>
+                <button class="mode-button" type="button" data-mode="pursuit">Pursuit Run</button>
+                <button class="mode-button" type="button" data-mode="citadel">Citadel Storm</button>
+            </div>
+            <p class="mode-description" id="mode-description">
+                Cold cyan highways, amber portal light, and a disciplined city horizon.
+            </p>
+        </header>
+
+        <main>
+            <section class="hero-layout">
+                <div class="panel scene-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="section-tag">Primary Scene</p>
+                            <h2>Pixel Chase</h2>
+                        </div>
+                        <p>
+                            Built entirely with code-driven canvas art, layered glow passes,
+                            and rider proportions tuned to read as a real person on a real machine.
+                        </p>
+                    </div>
+                    <div class="canvas-frame">
+                        <canvas
+                            id="scene-canvas"
+                            width="960"
+                            height="540"
+                            aria-label="Animated retro-futurist scene of a human rider on a Tron-inspired light cycle"
+                        ></canvas>
+                    </div>
+                    <div class="scene-legend">
+                        <span>Helmet and torso silhouette</span>
+                        <span>Extended light-cycle wheelbase</span>
+                        <span>Reactive skyline and grid floor</span>
+                        <span>Animated energy trail</span>
+                    </div>
+                </div>
+
+                <aside class="panel spec-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="section-tag">Structure</p>
+                            <h2>World Build</h2>
+                        </div>
+                        <p>
+                            The reconstruction leans into anatomy, mechanical stance,
+                            and a layered digital city instead of vague abstract shapes.
+                        </p>
+                    </div>
+                    <div class="stat-list">
+                        <article class="stat-card">
+                            <h3>Rider Form</h3>
+                            <p>
+                                Helmet, shoulders, elbows, hips, knees, and boots are all staged
+                                in a forward attack posture instead of a floating stick figure.
+                            </p>
+                        </article>
+                        <article class="stat-card">
+                            <h3>Cycle Engineering</h3>
+                            <p>
+                                The bike uses a long chassis, enclosed neon wheels, a low saddle,
+                                and a front fairing that reads like a machine with weight.
+                            </p>
+                        </article>
+                        <article class="stat-card">
+                            <h3>Grid Lighting</h3>
+                            <p>
+                                Cyan, amber, magenta, and storm-glow variants change the arena mood
+                                without breaking the core pixel identity.
+                            </p>
+                        </article>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="details-grid">
+                <article class="panel detail-card">
+                    <p class="section-tag">Environment</p>
+                    <h3>Digital City</h3>
+                    <p>
+                        Horizon towers, star drift, portal glow, and a perspective grid keep the
+                        scene feeling like a real place instead of a flat wallpaper.
+                    </p>
+                </article>
+                <article class="panel detail-card">
+                    <p class="section-tag">Motion</p>
+                    <h3>Live Rendering</h3>
+                    <p>
+                        The rider bobs under suspension, wheel hubs pulse, sparks peel off the trail,
+                        and the road planes scroll continuously under the chassis.
+                    </p>
+                </article>
+                <article class="panel detail-card">
+                    <p class="section-tag">Interactivity</p>
+                    <h3>Arena Duel</h3>
+                    <p>
+                        The lower arena turns the page into a small game with enemy programs,
+                        trail collision, increasing speed, and restart controls.
+                    </p>
+                </article>
+            </section>
+
+            <section class="panel arena-panel" id="arena">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-tag">Playable System</p>
+                        <h2>Light Cycle Duel</h2>
+                    </div>
+                    <p>
+                        Use arrow keys or WASD to carve a trail. The enemy programs will look for open
+                        lanes, so staying calm and shaping the arena matters more than pure speed.
+                    </p>
+                </div>
+                <div class="arena-layout">
+                    <div class="arena-frame">
+                        <canvas
+                            id="arena-canvas"
+                            width="480"
+                            height="480"
+                            aria-label="Playable light cycle arena"
+                        ></canvas>
+                    </div>
+                    <div class="arena-sidebar">
+                        <div class="score-grid">
+                            <div class="hud-box">
+                                <span class="hud-label">Round</span>
+                                <strong id="round-display">1</strong>
+                            </div>
+                            <div class="hud-box">
+                                <span class="hud-label">Wins</span>
+                                <strong id="win-display">0</strong>
+                            </div>
+                            <div class="hud-box">
+                                <span class="hud-label">Threats</span>
+                                <strong id="threat-display">2</strong>
+                            </div>
+                            <div class="hud-box">
+                                <span class="hud-label">Pace</span>
+                                <strong id="speed-display">180 kph</strong>
+                            </div>
+                        </div>
+
+                        <p class="arena-copy" id="status-line">
+                            Cut the lane cleanly and let the enemy programs run out of room.
+                        </p>
+                        <p class="run-state" id="run-state">Run state: live</p>
+
+                        <div class="control-pad" aria-label="On-screen controls">
+                            <button class="control-button up" type="button" data-dir="up">Up</button>
+                            <button class="control-button left" type="button" data-dir="left">Left</button>
+                            <button class="control-button down" type="button" data-dir="down">Down</button>
+                            <button class="control-button right" type="button" data-dir="right">Right</button>
+                        </div>
+
+                        <button class="restart-button" id="restart-button" type="button">Restart Run</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-note">
+            Original browser build inside the <code>Tron</code> folder, using HTML, CSS, and canvas-rendered pixel art.
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
